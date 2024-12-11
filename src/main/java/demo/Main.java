@@ -3,12 +3,14 @@ package demo;
 public class Main {
     public static void main(String[] args) {
         App app = App.getInstance();
-        User user = new User("1","hala");
+        User hala = new User("1", "hala");
+        User charlie = new User("2", "charlie");
 
-        System.out.println(user);
+        hala.login(app);
+        System.out.println(hala);
+        charlie.login(app);
 
-
-
+        // HOW CAN hala SEND "Hello World" to charlie?
 
     }
 }

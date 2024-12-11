@@ -1,14 +1,12 @@
 package demo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class App implements Mediator{
     private static App instance;
 
-
-    private List<User> users;
-
-
+    private List<User> users = new ArrayList<>();
 
     public static App getInstance() {
        if(instance == null){
@@ -18,8 +16,6 @@ public class App implements Mediator{
        }
         return instance;
     }
-
-
 
     @Override
     public void addUser(User user){
@@ -36,13 +32,16 @@ public class App implements Mediator{
 
     @Override
     public void findUser( String userId){
-
+        // WILL NEED TO RETURN USER BY ID
     }
 
 
     @Override
     public void deliverMessage(String senderId,  String recipientId, String content ){
-
+        // FIND THE SENDER
+        // FIND THE RECIPIENT
+        // CREATE A MESSAGE
+        // DELIVERY IT TO THE RECIPIENT
     }
 
 }

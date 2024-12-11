@@ -2,12 +2,12 @@ package demo;
 
 import java.util.Arrays;
 
-public  class User {
+public class User {
     protected String id;
-   protected String username;
+    protected String username;
     private Message[] inbox;
     private App app;
- protected Mediator mediator;
+    protected Mediator mediator;
 
     public User(String id, String username) {
         this.id = id;
@@ -26,11 +26,11 @@ public  class User {
     }
 
     public void login(App app) {
-
+        app.addUser(this);
     }
 
     public void sendMessage(String recipientId, String content) {
-
+        app.deliverMessage(id, recipientId, content);
     }
 
     public void receiveMessage(Message message) {
@@ -40,9 +40,10 @@ public  class User {
     public void readMessage(int idx) {
 
     }
- public  void setMediator(Mediator mediator) {
-  this.mediator = mediator;
- }
+
+    public void setMediator(Mediator mediator) {
+        this.mediator = mediator;
+    }
 
     public String getUsername() {
         return username;
